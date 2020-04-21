@@ -174,7 +174,7 @@ function writePassword(){
     var check4 = false;
     check4 = document.getElementById("check4").checked;
     if ((check1 === false)&&(check2 === false)&&(check3 === false)&&(check4 === false)) {
-      alert("At Least Choose One Type of Characters for your Password");
+      alert("Check at least One password criterion");
       var finalPassword="";
       document.getElementById("password").innerHTML = finalPassword;
       return;
