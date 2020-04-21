@@ -33,10 +33,10 @@
             <!--            <p>The form below contains three checkboxes. The first option is checked by default, and the last option is disabled:</p> -->
            <!-- <form action="/action_page.php">  -->
             <form >  
-              <p>How long should your password be (Enter a no. between 8 to 128): </p>
+              <p>How long should your password be (Enter a no. between 8 to 128, Default 8): </p>
   <!--<form action="/action_page.php"> -->
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Default form control" name="text1">
+                <input type="text" class="form-control" id = "len1" onchange="lengthFunction()" placeholder="Default form control" name="text1">
               </div>
               <p>Password Criterion: Choose what all you want to include in your password:</p>
               <div class="form-check">  

@@ -34,11 +34,11 @@ generateBtn.addEventListener("click", writePassword);
 // ----------------------------------------------------------------------------------------
 
 // Makes Final Password Array according to length desired by user 
-function makeFinalPassArray(fullPassArray2){
+function makeFinalPassArray(fullPassArray2,userLen){
   var finalPassArray=[];
   var len1 = fullPassArray2.length;
   //IMP>>>> have to change value of userLen
-  var userLen = 5;
+  //var userLen = 5;
   var randNo = 0;
   for (i = 0; i < userLen; i++){
     // Generate random no. between 0 and len1
@@ -92,13 +92,49 @@ function makePasswordArray(){
 }
 // -------------------------------------------------------------------------
 
+// function getUserChoices(){
+//   var userChoices = [];
+//   var userLength = document.getElementById("len1").value;
+//   alert("userLength"+userLength);
+//   userChoices[0] = userLength;
+//   alert("length2"+userChoices[0]);
+//   return userChoices;
+// }
+
+// --------------------------------------------------------------------------
+
+function lengthFunction(){
+//  var userLength = 0;
+  userLength = document.getElementById("len1").value;
+
+  //Check that User Length Input is a no. default input 8 taken
+  if(isNaN(userLength)){
+    alert(userLength + " is not a number");
+   }else if (userLength < 8){
+    alert("Default Password Length 8 will be taken"); 
+    userLength = 8;
+   }else if (userLength > 128){
+    alert("Default Password Length 128 will be taken"); 
+    userLength = 8;
+   }
+  }
+
+// --------------------------------------------------------------------------
+
 function writePassword(){
  /*   alert("in write password function"); */
     document.getElementById("password").innerHTML = "";
+    var userChoices=[];
+    alert("length1");
+ //   userChoices=getUserChoices();
     fullPassArray=[];
     fullPassArray=makePasswordArray();
-    alert(fullPassArray.length);
-    finalPassArray=makeFinalPassArray(fullPassArray);
+    alert("fullPassArrayLength"+fullPassArray.length);
+    // Default Password Length = 8;
+    var userLength = 8;
+    userLength = document.getElementById("len1").value;
+    alert("userLengthFin"+userLength);
+    finalPassArray=makeFinalPassArray(fullPassArray,userLength);
     finalPassword="";
     for (i = 0; i < finalPassArray.length; i++){
       finalPassword = finalPassword + finalPassArray[i];
