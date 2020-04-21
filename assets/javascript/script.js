@@ -54,31 +54,37 @@ function makeFinalPassArray(fullPassArray2,userLen){
 function makePasswordArray(){
 // Generating Password Choices Array
   var passChoices= [] ;
-  var a = 2;
+  var a = 1;
   var lCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
   if (a===1){
     // alert("in if a = 1");
     passChoices = passChoices.concat(lCase);
   }
 
-  var a = 2;
+  var a = 1;
   var uCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
   if (a===1){
     // alert("in if a = 1");
     passChoices = passChoices.concat(uCase);
   }
 
+
+  //var a = document.getElementById("myCheck").checked;
   var a = 1;
   var nPass = ['0','1','2','3','4','5','6','7','8','9'];
   if (a===1){
-    // alert("in if a = 1");
+//    alert("a" + a);
     passChoices = passChoices.concat(nPass);
   }
 
-  var a = 2;
-  /*var spCase = ['','!','"','#','$','%','&',"'",'(',')','*','+','-','.','/',',',':',';','<','=','>','?','@','[','\',']','^','_','`','{','|','}','~'];*/
+  var a = 1;
+  //var check4 = false;
+  //check4 = document.getElementById("myCheck").checked;
+  //alert("check4"+check4);
+  //var spCase = ['','!','"','#','$','%','&',"'",'(',')','*','+','-','.','/',',',':',';','<','=','>','?','@','[','\',']','^','_','`','{','|','}','~'];*/
   var spCase = ['','!','"','#','$','%','&',"'",'(',')','*','+','-','.','/',',',':',';','<','=','>','?','@','[',']','^','_','`','{','|','}','~'];
-  if (a===1){
+ if (a===1){
+ //  if (check4===true) {
     // alert("in if a = 1");
     passChoices = passChoices.concat(spCase);
   }
@@ -103,21 +109,21 @@ function makePasswordArray(){
 
 // --------------------------------------------------------------------------
 
-function lengthFunction(){
-//  var userLength = 0;
-  userLength = document.getElementById("len1").value;
+// function lengthFunction(){
+// //  var userLength = 0;
+//   userLength = document.getElementById("len1").value;
 
-  //Check that User Length Input is a no. default input 8 taken
-  if(isNaN(userLength)){
-    alert(userLength + " is not a number");
-   }else if (userLength < 8){
-    alert("Default Password Length 8 will be taken"); 
-    userLength = 8;
-   }else if (userLength > 128){
-    alert("Default Password Length 128 will be taken"); 
-    userLength = 8;
-   }
-  }
+//   //Check that User Length Input is a no. default input 8 taken
+//   if(isNaN(userLength)){
+//     alert(userLength + " is not a number");
+//    }else if (userLength < 8){
+//     alert("Default Password Length 8 will be taken"); 
+//     userLength = 8;
+//    }else if (userLength > 128){
+//     alert("Default Password Length 128 will be taken"); 
+//     userLength = 128;
+//    }
+//   }
 
 // --------------------------------------------------------------------------
 
@@ -132,7 +138,21 @@ function writePassword(){
     alert("fullPassArrayLength"+fullPassArray.length);
     // Default Password Length = 8;
     var userLength = 8;
-    userLength = document.getElementById("len1").value;
+ //   userLength = document.getElementById("len1").value;
+ userLength = document.getElementById("len1").value;
+
+ //Check that User Length Input is a no. default input 8 taken
+ if(isNaN(userLength)){
+   alert(userLength + " is not a number");
+  }else if (userLength < 8){
+   alert("Default Password Length 8 will be taken"); 
+   userLength = 8;
+  }else if (userLength > 128){
+   alert("Default Password Length 128 will be taken"); 
+   userLength = 128;
+  }
+ 
+ 
     alert("userLengthFin"+userLength);
     finalPassArray=makeFinalPassArray(fullPassArray,userLength);
     finalPassword="";
