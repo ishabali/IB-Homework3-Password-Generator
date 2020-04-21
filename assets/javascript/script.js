@@ -54,45 +54,53 @@ function makeFinalPassArray(fullPassArray2,userLen){
 function makePasswordArray(){
 // Generating Password Choices Array
   var passChoices= [] ;
-  var a = 1;
+
+
+  //var a = 1;
+  var check1 = false;
+  check1 = document.getElementById("check1").checked;
   var lCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-  if (a===1){
+  // if (a===1){
+  if (check1===true) {
     // alert("in if a = 1");
     passChoices = passChoices.concat(lCase);
   }
 
-  var a = 1;
+  //var a = 1;
+  var check2 = false;
+  check2 = document.getElementById("check2").checked;
   var uCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-  if (a===1){
+  //if (a===1){
+  if (check2===true) {
     // alert("in if a = 1");
     passChoices = passChoices.concat(uCase);
   }
 
-
-  //var a = document.getElementById("myCheck").checked;
-  var a = 1;
+  //var a = 1;
+  var check3 = false;
+  check3 = document.getElementById("check3").checked;
   var nPass = ['0','1','2','3','4','5','6','7','8','9'];
-  if (a===1){
+//  if (a===1){
+  if (check3===true) {
 //    alert("a" + a);
     passChoices = passChoices.concat(nPass);
   }
 
-  var a = 1;
-  //var check4 = false;
-  //check4 = document.getElementById("myCheck").checked;
+//  var a = 1;
+  var check4 = false;
+  check4 = document.getElementById("check4").checked;
   //alert("check4"+check4);
   //var spCase = ['','!','"','#','$','%','&',"'",'(',')','*','+','-','.','/',',',':',';','<','=','>','?','@','[','\',']','^','_','`','{','|','}','~'];*/
   var spCase = ['','!','"','#','$','%','&',"'",'(',')','*','+','-','.','/',',',':',';','<','=','>','?','@','[',']','^','_','`','{','|','}','~'];
- if (a===1){
- //  if (check4===true) {
-    // alert("in if a = 1");
+ //if (a===1){
+    if (check4===true) {
     passChoices = passChoices.concat(spCase);
   }
 
 // This for loop has to be removed later
-  for (i = 0; i < passChoices.length; i++){
-    alert(passChoices[i]);
-  }
+  // for (i = 0; i < passChoices.length; i++){
+  //   alert(passChoices[i]);
+  // }
   
   return passChoices;
 }
