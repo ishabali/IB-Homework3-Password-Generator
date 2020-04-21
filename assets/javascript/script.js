@@ -37,12 +37,12 @@ generateBtn.addEventListener("click", writePassword);
 function makeFinalPassArray(fullPassArray2){
   var finalPassArray=[];
   var len1 = fullPassArray2.length;
-  // have to change value of userLen
-  var userLen = 6;
+  //IMP>>>> have to change value of userLen
+  var userLen = 5;
   var randNo = 0;
   for (i = 0; i < userLen; i++){
-    // Generate random no. between 0 and (len1+1)
-    randNo = Math.floor(Math.random()*(len1+1));
+    // Generate random no. between 0 and len1
+    randNo = Math.floor(Math.random()*len1);
     alert("random no." + randNo);
     finalPassArray.push(fullPassArray2[randNo]);
     alert(finalPassArray[i]);
@@ -94,8 +94,15 @@ function makePasswordArray(){
 
 function writePassword(){
  /*   alert("in write password function"); */
+    document.getElementById("password").innerHTML = "";
     fullPassArray=[];
     fullPassArray=makePasswordArray();
     alert(fullPassArray.length);
     finalPassArray=makeFinalPassArray(fullPassArray);
+    finalPassword="";
+    for (i = 0; i < finalPassArray.length; i++){
+      finalPassword = finalPassword + finalPassArray[i];
+    }
+    alert(finalPassword);
+    document.getElementById("password").innerHTML = finalPassword;
 }
