@@ -27,7 +27,10 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+ /* color: hsl(206, 17%, 28%); */
+   color: blue;
+   font-size:70px;
+   font-weight: 20px;
 }
 
 .card {
